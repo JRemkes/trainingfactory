@@ -4,7 +4,7 @@ const BASE_NAMESPACE ='\\TFDH\\';
 const DATA_SOURCE_NAME =  'mysql:dbname=tfdh;host=127.0.0.1;charset=utf8';
 const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
-const DEFAULT_ROLE = 'user';
+const DEFAULT_ROLE = 'bezoeker';
 const IMAGE_LOCATION = 'images/';
 const IMAGE_DEFAULT = "";
 

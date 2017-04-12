@@ -14,7 +14,7 @@ function __autoload($className)
 }
 
 
-$control =  \filter_input(\INPUT_GET, 'control')?:'visitor' ; 
+$control =  \filter_input(\INPUT_GET, 'control')?:'bezoeker' ; 
 $action =   \filter_input(\INPUT_GET, 'action')?:'default' ;
 
 
