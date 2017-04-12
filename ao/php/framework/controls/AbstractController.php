@@ -70,9 +70,5 @@ abstract class AbstractController implements IController
         $controller->execute();
         exit();
     }
-    protected abstract function defaultAction();
-    
-    
+    // protected abstract function defaultAction();
 }
-
-
