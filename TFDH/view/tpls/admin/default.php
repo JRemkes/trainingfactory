@@ -44,7 +44,11 @@
                     <div class="clear"></div>
                 </section>
                 <section id="main-content">
-                    <h1>Home Admin</h1>
+                    <h1>Welkom bij de Administratie van Trainings centrum Den Haag</h1>
+                    <p>Den Haag Training Center is een sportschool waar onder professionele begeleiding 
+                    in een veilige omgeving verschillende soorten martial arts-, indoor bootcamp,
+                    personal- en small group trainingen worden aangeboden.</p>
+                    <p>Hier kunt u de instructeurs, leden en trainingen beheren.</p>
                 </section>
             </div>
         </div>

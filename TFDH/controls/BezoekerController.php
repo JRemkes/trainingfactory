@@ -31,6 +31,7 @@ class BezoekerController extends AbstractController {
                     break;
                 case REQUEST_FAILURE_DATA_INVALID:
                     $this->view->set("boodschap","Gegevens kloppen niet. Probeer opnieuw.");
+                    $this->forward("default", "bezoeker");
                     break;
                 case REQUEST_FAILURE_DATA_INCOMPLETE:
                     $this->forward("default", "bezoeker");
@@ -70,7 +71,8 @@ class BezoekerController extends AbstractController {
     }
     
     public function trainingAction(){
-        
+        $trainingen = $this->model->getTrainingen();
+        $this->view->set('trainingen',$trainingen);
     }
     
     public function ruleAction(){
