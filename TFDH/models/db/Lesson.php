@@ -4,7 +4,7 @@ use ao\php\framework\models\db\Entiteit;
 
 class Lesson EXTENDS Entiteit
 {
-    private $id;
+    protected $id;
 
     protected $time;
     protected $date;

@@ -25,7 +25,7 @@ abstract class AbstractController implements IController
         }
         $this->model = new $modelClassName($control, $action);
         $gebruikersRecht = $this->model->getGebruikerRecht();
-        if( $gebruikersRecht!==$this->control ) 
+        if( $gebruikersRecht !== $this->control ) 
         {
             var_dump($this->model->getGebruikerRecht());
             var_dump($this->control);
