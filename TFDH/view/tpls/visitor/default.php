@@ -18,7 +18,7 @@
                     <h1>Training centrum Den Haag</h1>
                 </div>
                 <div id="login-wrapper">
-                    <form method="post" action="?control=bezoeker&action=login">
+                    <form>
                         <input type="text" name="username" placeholder="username">
                         <input type="password" name="password" placeholder="wachtwoord">
                         <button>reset ww</button>
@@ -31,10 +31,10 @@
             <nav>
                 <ul>
                     <li class="active"><a>Home</a></li>
-                    <li><a href="?control=bezoeker&action=training">Trainings Aanbod</a></li>
-                    <li><a href="?control=bezoeker&action=register">Lid worden</a></li>
-                    <li><a href="?control=bezoeker&action=rule">Gedragsregels</a></li>
-                    <li><a href="?control=bezoeker&action=location">Lokatie & contact</a></li>
+                    <li><a>Trainings Aanbod</a></li>
+                    <li><a>Lid worden</a></li>
+                    <li><a>Gedragsregels</a></li>
+                    <li><a>Lokatie & contact</a></li>
                 </ul>
             </nav>
 
@@ -54,9 +54,6 @@
 
                 <section id="main-content">
                     <h1>Home</h1>
-                    <p>
-                        Welkom bij Training centrum Den Haag
-                    </p>
                 </section>
             </div>
         </div>
