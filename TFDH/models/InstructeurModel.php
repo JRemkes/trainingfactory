@@ -67,10 +67,10 @@ class InstructeurModel extends AbstractModel {
     }
 
     public function addLesson(){
-        $tijd = filter_input(INPUT_POST, 'tijd');
-        $datum = filter_input(INPUT_POST, 'datum');
-        $location=filter_input(INPUT_POST, 'locatie');
-        $mp=filter_input(INPUT_POST, 'maxdeelnemers');
+        $tijd = filter_input(INPUT_POST, 'time');
+        $datum = filter_input(INPUT_POST, 'date');
+        $location=filter_input(INPUT_POST, 'location');
+        $mp=filter_input(INPUT_POST, 'max_persons');
         $id = $_SESSION['gebruiker']->getId();
 
         if($tijd===null || $datum===null || $location===null || $mp===null)
@@ -87,16 +87,16 @@ class InstructeurModel extends AbstractModel {
             $sql=   "
                 INSERT INTO lesson 
                 SET
-                    tijd = :tijd,
-                    datum = :datum,
+                    time = :time,
+                    date = :date,
                     location = :location,
                     max_persons = :max_persons,
                     instructor_id = :instructor_id
             ";
             $stmnt = $this->dbh->prepare($sql);
         }
-        $stmnt->bindParam(':tijd', $tijd);
-        $stmnt->bindParam(':datum', $datum);
+        $stmnt->bindParam(':time', $tijd);
+        $stmnt->bindParam(':date', $datum);
         $stmnt->bindParam(':location', $location);
         $stmnt->bindParam(':max_persons', $mp);
         $stmnt->bindParam(':instructor_id', $id);

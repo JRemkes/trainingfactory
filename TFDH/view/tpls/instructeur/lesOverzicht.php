@@ -55,7 +55,7 @@
                     <table id="dataTable">
                     <tr><td>Tijd</td><td>Datum</td><td>Locatie</td><td>Maximaal aantal deelnemers</td><td>Instructeur</td><td>Acties</td></tr>
                     <?php foreach($lessen as $les):?>
-                        <tr><td><?= $les->getTijd(); ?></td><td><?= $les->getDatum(); ?></td><td><?= $les->getLocation(); ?></td><td><?= $les->getMax_persons(); ?></td>
+                        <tr><td><?= $les->getTime(); ?></td><td><?= $les->getDate(); ?></td><td><?= $les->getLocation(); ?></td><td><?= $les->getMax_persons(); ?></td>
                         <td><?= $les->getFirstname();?></td><td><a></a><a action="lesVerwijderen"><img src="TFDH/img/delete.png"></a></td></tr>
                     <?php endforeach ?>
                     </table>
