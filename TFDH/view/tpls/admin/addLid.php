@@ -25,8 +25,8 @@
             <nav>
                 <ul>
                     <li><a href="?control=admin&action=default">Home</a></li>
-                    <li class="active"><a href="?control=admin&action=instructeurs">Instructeurs</a></li>
-                    <li><a href="?control=admin&action=leden">Leden</a></li>
+                    <li><a href="?control=admin&action=instructeurs">Instructeurs</a></li>
+                    <li class="active"><a href="?control=admin&action=leden">Leden</a></li>
                     <li><a href="?control=admin&action=trainingen">Trainingen</a></li>                    
                 </ul>
             </nav>
@@ -44,7 +44,7 @@
                     <div class="clear"></div>
                 </section>
                 <section id="main-content">
-                    <h1>Toevoegen van een nieuwe instructeur</h1>
+                    <h1>Toevoegen van een nieuwe lid</h1>
                     <form method="post">                 
                         <table>
                             <tr>
@@ -77,7 +77,7 @@
                                     <input type="text" placeholder='Vul verplicht een achternaam in' name="lastname" required="required" value="<?= !empty($form_data['lastname'])?$form_data['lastname']:'';?>" >
                                 </td>
                             </tr>
-                            <<tr> 
+                            <tr> 
                                 <td>Geboortedatum</td>
                                 <td>
                                     <input type="date" placeholder='j/m/d' name="dateofbirth" required="required" value="<?= !empty($form_data['dateofbirth'])?$form_data['dateofbirth']:'';?>" >
@@ -93,18 +93,6 @@
                                 <td>E-mailadres</td>
                                 <td>
                                     <input type="email" placeholder='Vul verplicht een e-mailadres in' name="emailaddress" required="required" value="<?= !empty($form_data['emailaddress'])?$form_data['emailaddress']:'';?>" >
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td>Aangenomen op</td>
-                                <td>
-                                    <input type="date" placeholder='j/m/d' name="hiring_date" required="required" value="<?= !empty($form_data['hiring_date'])?$form_data['hiring_date']:'';?>" >
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td>Salaris</td>
-                                <td>
-                                    <input type="text" placeholder='Vul verplicht een salaris in' name="salary" required="required" value="<?= !empty($form_data['salary'])?$form_data['salary']:'';?>" >
                                 </td>
                             </tr>
                             <tr> 

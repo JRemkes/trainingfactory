@@ -25,8 +25,8 @@
             <nav>
                 <ul>
                     <li><a href="?control=admin&action=default">Home</a></li>
-                    <li class="active"><a href="?control=admin&action=instructeurs">Instructeurs</a></li>
-                    <li><a href="?control=admin&action=leden">Leden</a></li>
+                    <li><a href="?control=admin&action=instructeurs">Instructeurs</a></li>
+                    <li class="active"><a href="?control=admin&action=leden">Leden</a></li>
                     <li><a href="?control=admin&action=trainingen">Trainingen</a></li>                    
                 </ul>
             </nav>
@@ -44,43 +44,43 @@
                     <div class="clear"></div>
                 </section>
                 <section id="main-content">
-                    <h1>Toevoegen van een nieuwe instructeur</h1>
+                    <h1>Wijzig gegevens instructeur</h1>
                     <form method="post">                 
                         <table>
                             <tr>
                                 <td>Loginnaam</td>
                                 <td>
-                                    <input type="text" placeholder="Vul verplicht een loginnaam in" name="loginname"  required="required" value="<?= !empty($form_data['loginname'])?$form_data['loginname']:'';?>">
+                                    <input type="text" placeholder="Vul verplicht een loginnaam in" name="loginname"  required="required" value="<?= !empty($lid->getLoginname())?$lid->getLoginname():'';?>">
                                 </td>
                             </tr>
                             <tr >
                                 <td>Wachtwoord</td>
                                 <td>
-                                    <input type="text" placeholder='Vul verplicht een wachtwoord in' name="password" required="required" value="<?= !empty($form_data['password'])?$form_data['password']:'';?>" >
+                                    <input type="text" placeholder='Vul verplicht een wachtwoord in' name="password" required="required" value="<?= !empty($lid->getPassword())?$lid->getPassword():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Voornaam</td>
                                 <td>
-                                    <input type="text"placeholder='Vul verplicht een voornaam in' name="firstname" required="required" value="<?= !empty($form_data['firstname'])?$form_data['firstname']:'';?>" >
+                                    <input type="text"placeholder='Vul verplicht een voornaam in' name="firstname" required="required" value="<?= !empty($lid->getFirstname())?$lid->getFirstname():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Tussenvoegsel</td>
                                 <td>
-                                    <input type="text" placeholder='Vul eventueel een tussenvoegsel in' name="preprovision" value="<?= !empty($form_data['preprovision'])?$form_data['preprovision']:'';?>" >
+                                    <input type="text" placeholder='Vul eventueel een tussenvoegsel in' name="preprovision" value="<?= !empty($lid->getPreprovision())?$lid->getPreprovision():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Achternaam</td>
                                 <td>
-                                    <input type="text" placeholder='Vul verplicht een achternaam in' name="lastname" required="required" value="<?= !empty($form_data['lastname'])?$form_data['lastname']:'';?>" >
+                                    <input type="text" placeholder='Vul verplicht een achternaam in' name="lastname" required="required" value="<?= !empty($lid->getLastname())?$lid->getLastname():'';?>" >
                                 </td>
                             </tr>
-                            <<tr> 
+                            <tr> 
                                 <td>Geboortedatum</td>
                                 <td>
-                                    <input type="date" placeholder='j/m/d' name="dateofbirth" required="required" value="<?= !empty($form_data['dateofbirth'])?$form_data['dateofbirth']:'';?>" >
+                                    <input type="date" placeholder='j/m/d' name="dateofbirth" required="required" value="<?= !empty($lid->getDateofbirth())?$lid->getDateofbirth():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
@@ -92,37 +92,25 @@
                             <tr> 
                                 <td>E-mailadres</td>
                                 <td>
-                                    <input type="email" placeholder='Vul verplicht een e-mailadres in' name="emailaddress" required="required" value="<?= !empty($form_data['emailaddress'])?$form_data['emailaddress']:'';?>" >
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td>Aangenomen op</td>
-                                <td>
-                                    <input type="date" placeholder='j/m/d' name="hiring_date" required="required" value="<?= !empty($form_data['hiring_date'])?$form_data['hiring_date']:'';?>" >
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td>Salaris</td>
-                                <td>
-                                    <input type="text" placeholder='Vul verplicht een salaris in' name="salary" required="required" value="<?= !empty($form_data['salary'])?$form_data['salary']:'';?>" >
+                                    <input type="email" placeholder='Vul verplicht een e-mailadres in' name="emailaddress" required="required" value="<?= !empty($lid->getEmailaddress())?$lid->getEmailaddress():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Straat</td>
                                 <td>
-                                    <input type="text" placeholder='Vul verplicht een straat in' name="street" required="required" value="<?= !empty($form_data['street'])?$form_data['street']:'';?>" >
+                                    <input type="text" placeholder='Vul verplicht een straat in' name="street" required="required" value="<?= !empty($lid->getStreet())?$lid->getStreet():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Postcode</td>
                                 <td>
-                                    <input type="text" placeholder='Vul verplicht een postcode in' name="postal_code" required="required" value="<?= !empty($form_data['postal_code'])?$form_data['postal_code']:'';?>" >
+                                    <input type="text" placeholder='Vul verplicht een postcode in' name="postal_code" required="required" value="<?= !empty($lid->getPostal_code())?$lid->getPostal_code():'';?>" >
                                 </td>
                             </tr>
                             <tr> 
                                 <td>Plaats</td>
                                 <td>
-                                    <input type="text" placeholder='Vul verplicht een plaats in' name="place" required="required" value="<?= !empty($form_data['place'])?$form_data['place']:'';?>" >
+                                    <input type="text" placeholder='Vul verplicht een plaats in' name="place" required="required" value="<?= !empty($lid->getPlace())?$lid->getPlace():'';?>" >
                                 </td>
                             </tr>
                             <tr>

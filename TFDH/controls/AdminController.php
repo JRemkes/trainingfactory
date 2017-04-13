@@ -82,7 +82,36 @@ class AdminController extends AbstractController {
     
     public function updateInstructeurAction()
     {
+        $instructeur = $this->model->getInstructeur();
+        $this->view->set('instructeur',$instructeur);
         
+        $gebruiker = $this->model->getGebruiker();
+        $this->view->set('gebruiker',$gebruiker);
+        
+        if($this->model->isPostLeeg())
+        {
+           $this->view->set("boodschap","Wijzig hier de instructeur gegevens");
+        }
+        else
+        {
+            $result = $this->model->updateInstructeur();
+            switch($result)
+            {
+                case REQUEST_SUCCESS:
+                    $this->view->set('boodschap','wijziging gelukt');
+                    $this->forward('instructeurs');
+                    break;
+                case REQUEST_FAILURE_DATA_INCOMPLETE:
+                    $this->view->set("boodschap","De gegevens waren incompleet. Vul compleet in!");
+                    break;
+                case REQUEST_NOTHING_CHANGED:
+                    $this->view->set("boodschap","Er was niets te wijzigen");
+                    break;
+                case REQUEST_FAILURE_DATA_INVALID:
+                    $this->view->set("boodschap","Vul correcte gegevens in.");
+                    break;
+            }             
+        }
     }
     
     public function deleteInstructeurAction()
@@ -108,12 +137,69 @@ class AdminController extends AbstractController {
     
     public function addLidAction()
     {
+        if($this->model->isPostLeeg())
+        {
+           $this->view->set("boodschap","Vul gegevens in van de nieuwe instructeur");          
+        }
+        else
+        {   
+            $result=$this->model->addLid();
+            switch($result)
+            {               
+                case REQUEST_FAILURE_DATA_INCOMPLETE:
+                    $this->view->set("boodschap", "instructeur is niet toegevoegd. Niet alle vereiste data ingevuld.");  
+                    $this->view->set('form_data',$_POST);
+                    break;
+                case REQUEST_FAILURE_DATA_INVALID:
+                    $this->view->set("boodschap", "instructeur is niet toegevoegd. Er is foutieve data ingestuurd.");  
+                    $this->view->set('form_data',$_POST);
+                    break;
+                case REQUEST_SUCCESS:
+                    $this->view->set("boodschap", "instructeur is toegevoegd."); 
+                    $this->forward("leden");
+                    break;  
+            }  
+        }
         
+        $leden = $this->model->getLeden();
+        $this->view->set('leden',$leden);
+        
+        $gebruiker = $this->model->getGebruiker();
+        $this->view->set('gebruiker',$gebruiker);
     }
     
     public function updateLidAction()
     {
+        $lid = $this->model->getLid();
+        $this->view->set('lid',$lid);
         
+        $gebruiker = $this->model->getGebruiker();
+        $this->view->set('gebruiker',$gebruiker);
+        
+        if($this->model->isPostLeeg())
+        {
+           $this->view->set("boodschap","Wijzig hier de lid gegevens");
+        }
+        else
+        {
+            $result = $this->model->updateLid();
+            switch($result)
+            {
+                case REQUEST_SUCCESS:
+                    $this->view->set('boodschap','wijziging gelukt');
+                    $this->forward('leden');
+                    break;
+                case REQUEST_FAILURE_DATA_INCOMPLETE:
+                    $this->view->set("boodschap","De gegevens waren incompleet. Vul compleet in!");
+                    break;
+                case REQUEST_NOTHING_CHANGED:
+                    $this->view->set("boodschap","Er was niets te wijzigen");
+                    break;
+                case REQUEST_FAILURE_DATA_INVALID:
+                    $this->view->set("boodschap","Vul correcte gegevens in.");
+                    break;
+            }             
+        }
     }
     
     public function deleteLidAction()
