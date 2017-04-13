@@ -45,7 +45,7 @@
                 </section>
                 <section id="main-content">
                     <h1>Overzicht trainingen</h1>
-                    <table>
+                    <table id="dataTable">
                         <thead>
                             <tr>
                                 <td>Beschrijving</td>

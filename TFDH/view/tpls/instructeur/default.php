@@ -17,7 +17,7 @@
                     <img src="TFDH/img/logo.png">
                     <h1>Training centrum Den Haag</h1>
                 </div>
-                <div id="logout-wrapper">
+                <div id="login-wrapper">
                     <form>
                         <a>Welkom <?= $gebruiker->getLoginname();?></a>
                         <a><?= $gebruiker->getRole(); ?> </a>

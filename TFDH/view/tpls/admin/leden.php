@@ -45,7 +45,7 @@
                 </section>
                 <section id="main-content">
                     <h1>Overzicht leden</h1>
-                    <table>
+                    <table id="dataTable">
                         <thead>
                             <tr>
                                 <td>Naam</td>
